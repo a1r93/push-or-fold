@@ -6,7 +6,7 @@ size and your current position.
 The proposed outcome is based on the well-known
 [Jennifear's MTT push or fold chart](https://docs.google.com/spreadsheets/d/1hHM04qRKysOVj0IoiW6EZpWFSVB2U3Oscg4-B2_0xog/edit?hl=en_US&hl=en_US#gid=3).
 
-![example image][https://imgur.com/gyyros0 "example image"]
+![alt Example image](https://imgur.com/GYYROs0)
 
 ## Installation
 
