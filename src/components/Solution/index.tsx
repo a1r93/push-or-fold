@@ -2,13 +2,15 @@ import { useEffect, useState } from 'react';
 
 import { Color } from '../../colors';
 import { compareHand } from './calculator/calculator';
-import ranges, { TPosition } from './ranges';
+import ranges from './ranges';
+import { TAnte, TPosition } from './ranges/types';
 import { SolutionText, SolutionWrapper } from './style';
 
 interface ISolutionProps {
     hand?: string;
     stack?: number;
     position?: TPosition;
+    ante?: TAnte;
 }
 
 interface IMessage {
@@ -34,23 +36,23 @@ const getColor = (state: keyof IMessage): Color => {
     return 'red';
 };
 
-const Solution = ({ hand, stack, position }: ISolutionProps) => {
+const Solution = ({ ante, hand, stack, position }: ISolutionProps) => {
     const [state, setState] = useState<keyof IMessage>('selecting');
 
     useEffect(() => {
-        if (!hand || !stack || !position) {
+        if (!hand || !stack || !position || !ante) {
             setState('selecting');
             return;
         }
 
-        const currentRange = ranges[position][stack - 1];
+        const currentRange = ranges[ante][position][stack - 1];
         if (!currentRange.length) {
             setState('yes');
             return;
         }
         const isInRange = currentRange.some((currentHand: string) => compareHand(hand, currentHand));
         setState(isInRange ? 'yes' : 'no');
-    }, [hand, stack, position]);
+    }, [ante, hand, stack, position]);
 
     return (
         <SolutionWrapper background={getColor(state)}>

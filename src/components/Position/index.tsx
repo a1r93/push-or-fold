@@ -1,6 +1,6 @@
 import Section from '../Section';
 import { Cell } from '../Section/style';
-import { TPosition } from '../Solution/ranges';
+import { TPosition } from '../Solution/ranges/types';
 
 const positions: TPosition[] = ['SB', 'BTN', 'CO', 'HJ', 'B-3', 'B-4', 'B-5', 'B-6'];
 
@@ -10,11 +10,11 @@ interface IProps {
 }
 
 const Position = ({ selectedPosition, setSelectedPosition }: IProps) => {
-    const toggleSelectedStack = (stack: TPosition) => {
-        if (selectedPosition === stack) {
+    const toggleSelectedStack = (position: TPosition) => {
+        if (selectedPosition === position) {
             setSelectedPosition(undefined);
         } else {
-            setSelectedPosition(stack);
+            setSelectedPosition(position);
         }
     };
 

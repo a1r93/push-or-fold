@@ -16,7 +16,7 @@ const StackSize = ({ selectedStack, setSelectedStack }: IProps) => {
     };
 
     return (
-        <Section grid={5} title="Choose a stack" background="orange">
+        <Section grid={5} title="Choose a stack" background="orange" margin={[0, 0, 16]}>
             {[...Array(20)].map((elemnt, index: number) => (
                 <Cell
                     key={index}
