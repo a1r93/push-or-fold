@@ -1,12 +1,14 @@
 import Section from '../Section';
-import { Cell } from '../Section/style';
+import { Oval } from '../Section/style';
 import { TAnte } from '../Solution/ranges/types';
 
-const positions: TAnte[] = ['ante10', 'ante12'];
+const antes: TAnte[] = ['ante0', 'ante10', 'ante12', 'ante20'];
 
 const messages = {
+    ante0: 'O%',
     ante10: '10%',
     ante12: '12.5%',
+    ante20: '20%',
 };
 
 interface IProps {
@@ -20,9 +22,9 @@ const Ante = ({ selectedAnte, setSelectedAnte }: IProps) => {
     };
 
     return (
-        <Section grid={4} title="The ante" background="orange" gap={20}>
-            {positions.map((ante: TAnte, index: number) => (
-                <Cell
+        <Section grid={4} title="The ante" background="orange" gap={8}>
+            {antes.map((ante: TAnte, index: number) => (
+                <Oval
                     key={index}
                     isSelected={selectedAnte === ante}
                     onClick={() => toggleSelectedStack(ante)}
@@ -30,7 +32,7 @@ const Ante = ({ selectedAnte, setSelectedAnte }: IProps) => {
                     selectedBackground="green"
                 >
                     {messages[ante]}
-                </Cell>
+                </Oval>
             ))}
         </Section>
     );

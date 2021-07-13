@@ -12,7 +12,9 @@ export interface IRange {
 export type TPosition = keyof IRange;
 
 export interface IRanges {
+    ante0: IRange;
     ante10: IRange;
     ante12: IRange;
+    ante20: IRange;
 }
 export type TAnte = keyof IRanges;

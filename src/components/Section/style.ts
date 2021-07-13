@@ -49,3 +49,8 @@ export const Cell = styled.div<{ isSelected: boolean; background: Color; selecte
         font-weight: bolder;
     }
 `;
+
+export const Oval = styled(Cell)`
+    width: 65px;
+    border-radius: 35px;
+`;

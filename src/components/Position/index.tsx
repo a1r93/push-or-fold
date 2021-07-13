@@ -1,5 +1,5 @@
 import Section from '../Section';
-import { Cell } from '../Section/style';
+import { Oval } from '../Section/style';
 import { TPosition } from '../Solution/ranges/types';
 
 const positions: TPosition[] = ['SB', 'BTN', 'CO', 'HJ', 'B-3', 'B-4', 'B-5', 'B-6'];
@@ -19,9 +19,9 @@ const Position = ({ selectedPosition, setSelectedPosition }: IProps) => {
     };
 
     return (
-        <Section grid={4} title="Your position" background="orange" margin={[0, 0, 16]} gap={20}>
+        <Section grid={4} title="Your position" background="orange" margin={[0, 0, 16]} gap={8}>
             {positions.map((position: TPosition, index: number) => (
-                <Cell
+                <Oval
                     key={index}
                     isSelected={selectedPosition === position}
                     onClick={() => toggleSelectedStack(position)}
@@ -29,7 +29,7 @@ const Position = ({ selectedPosition, setSelectedPosition }: IProps) => {
                     selectedBackground="green"
                 >
                     {position}
-                </Cell>
+                </Oval>
             ))}
         </Section>
     );
