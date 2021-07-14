@@ -14,14 +14,7 @@ export const SectionContainer = styled.div<{ background: Color; span?: number; m
     border-radius: 11px;
 `;
 
-export const Title = styled.h1`
-    padding-bottom: 16px;
-`;
-
-export const Header = styled.div`
-    display: flex;
-    justify-content: space-between;
-`;
+export const Title = styled.h1``;
 
 export const SectionWrapper = styled.div<{ gap: number; grid: number }>`
     display: grid;

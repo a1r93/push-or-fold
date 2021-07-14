@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Ante from './components/Ante';
-import HandsGrid from './components/HandsGrid';
+import HandsPicker from './components/HandsPicker';
 import Position from './components/Position';
 import Solution from './components/Solution';
 import { TAnte, TPosition } from './components/Solution/ranges/types';
@@ -25,7 +25,7 @@ export function App() {
         <>
             <GlobalStyle />
             <AppContainer>
-                <HandsGrid selectedHand={selectedHand} setSelectedHand={setSelectedHand} onReset={resetAll} />
+                <HandsPicker selectedHand={selectedHand} setSelectedHand={setSelectedHand} onReset={resetAll} />
                 <Column>
                     <Ante selectedAnte={selectedAnte} setSelectedAnte={setSelectedAnte} />
                     <StackSize setSelectedStack={setSelectedStack} selectedStack={selectedStack} />
