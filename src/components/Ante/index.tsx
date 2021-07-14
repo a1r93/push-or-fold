@@ -22,14 +22,14 @@ const Ante = ({ selectedAnte, setSelectedAnte }: IProps) => {
     };
 
     return (
-        <Section grid={4} title="The ante" background="orange" gap={8}>
+        <Section grid={4} title="The ante" background="secondary" gap={8}>
             {antes.map((ante: TAnte, index: number) => (
                 <Oval
                     key={index}
                     isSelected={selectedAnte === ante}
                     onClick={() => toggleSelectedStack(ante)}
-                    background="red"
-                    selectedBackground="green"
+                    background="primary"
+                    selectedBackground="selected"
                 >
                     {messages[ante]}
                 </Oval>

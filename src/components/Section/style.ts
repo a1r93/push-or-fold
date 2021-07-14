@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
-import colors, { Color } from '../../colors';
+import { TPaletteColors } from '../../styles/themes/types';
 
 const getMargin = (value: number[]) => value.map((current: number) => `${current}px`).join(' ');
 
-export const SectionContainer = styled.div<{ background: Color; span?: number; margin?: number[] }>`
+export const SectionContainer = styled.div<{ background: TPaletteColors; span?: number; margin?: number[] }>`
     display: flex;
     flex-direction: column;
     flex: ${({ span = 0 }) => span};
     margin: ${({ margin = [16, 0] }) => getMargin(margin)};
     padding: 16px;
-    background: ${({ background }) => colors[background]};
     border-radius: 11px;
+    background: ${({ background, theme }) => theme.palette[background]};
+    transition: all ${({ theme }) => theme.transitionDuration}ms ease-in-out;
 `;
 
 export const Title = styled.h1``;
@@ -23,9 +24,9 @@ export const SectionWrapper = styled.div<{ gap: number; grid: number }>`
     height: 100%;
 `;
 
-export const Cell = styled.div<{ isSelected: boolean; background: Color; selectedBackground: Color }>`
-    background: ${({ isSelected, selectedBackground, background }) =>
-        isSelected ? colors[selectedBackground] : colors[background]};
+export const Cell = styled.div<{ isSelected: boolean; background: TPaletteColors; selectedBackground: TPaletteColors }>`
+    background: ${({ isSelected, selectedBackground, background, theme }) =>
+        isSelected ? theme.palette[selectedBackground] : theme.palette[background]};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,9 +34,11 @@ export const Cell = styled.div<{ isSelected: boolean; background: Color; selecte
     height: 50px;
     cursor: pointer;
     color: white;
-    border-radius: 5px;
+    border-radius: ${({ theme }) => theme.radius}px;
     font-size: ${({ isSelected }) => (isSelected ? '1.1rem' : '1rem')};
     font-weight: ${({ isSelected }) => (isSelected ? 'bolder' : '400')};
+    transition: background ${({ theme }) => theme.transitionDuration}ms ease-in-out,
+        border-radius ${({ theme }) => theme.transitionDuration}ms ease-in-out;
 
     &:hover {
         font-size: 1.1rem;
@@ -45,5 +48,5 @@ export const Cell = styled.div<{ isSelected: boolean; background: Color; selecte
 
 export const Oval = styled(Cell)`
     width: 65px;
-    border-radius: 35px;
+    border-radius: ${({ theme }) => theme.ovalRadius}px;
 `;

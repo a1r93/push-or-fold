@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import colors from '../../colors';
-
 export const Container = styled.button`
     height: 42px;
     padding: 0 24px;
@@ -10,7 +8,8 @@ export const Container = styled.button`
     align-items: center;
     justify-content: center;
 
-    background: ${colors.blue};
+    background: ${({ theme }) => theme.palette.pending};
+    transition: all ${({ theme }) => theme.transitionDuration}ms ease-in-out;
     border-radius: 8px;
     border: 0;
 

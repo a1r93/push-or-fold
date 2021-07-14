@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
-import colors, { Color } from '../../colors';
+import { TPaletteColors } from '../../styles/themes/types';
 
-export const SolutionWrapper = styled.div<{ background: Color }>`
+export const SolutionWrapper = styled.div<{ background: TPaletteColors }>`
     display: flex;
     padding: 32px;
-    background: ${({ background }) => colors[background]};
+    background: ${({ background, theme }) => theme.palette[background]};
     align-items: center;
     justify-content: center;
     border-radius: 11px;
     height: 140px;
+    transition: all ${({ theme }) => theme.transitionDuration}ms ease-in-out;
 `;
 
 export const SolutionText = styled.h2`

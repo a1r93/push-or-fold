@@ -1,11 +1,11 @@
 import { ReactElement } from 'react';
 
-import { Color } from '../../colors';
 import { Row } from '../../styles/layouts';
+import { TPaletteColors } from '../../styles/themes/types';
 import { SectionContainer, SectionWrapper, Title } from './style';
 
 interface ISectionProps {
-    background: Color;
+    background: TPaletteColors;
     title: string;
     headerSlot?: ReactElement;
     children: ReactElement | ReactElement[] | ReactElement[][];

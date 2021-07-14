@@ -18,8 +18,8 @@ const HandsGrid = ({ selectedHand, toggleIsSelected }: IProps) => {
                             key={hand}
                             isSelected={selectedHand === hand}
                             onClick={() => toggleIsSelected(hand)}
-                            background={letter === letter2 ? 'pink' : 'red'}
-                            selectedBackground="green"
+                            background={letter === letter2 ? 'tertiary' : 'primary'}
+                            selectedBackground="selected"
                         >
                             {hand}
                         </Cell>

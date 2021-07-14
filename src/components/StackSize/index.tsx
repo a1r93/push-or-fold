@@ -16,14 +16,14 @@ const StackSize = ({ selectedStack, setSelectedStack }: IProps) => {
     };
 
     return (
-        <Section grid={5} title="Choose a stack" background="orange" margin={[0, 0, 16]}>
+        <Section grid={5} title="Choose a stack" background="secondary" margin={[0, 0, 16]}>
             {[...Array(20)].map((elemnt, index: number) => (
                 <Cell
                     key={index}
                     isSelected={selectedStack === index + 1}
                     onClick={() => toggleSelectedStack(index + 1)}
-                    background={'red'}
-                    selectedBackground="green"
+                    background="primary"
+                    selectedBackground="selected"
                 >
                     {index + 1}
                 </Cell>

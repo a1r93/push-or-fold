@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Color } from '../../colors';
+import { TPaletteColors } from '../../styles/themes/types';
 import { compareHand } from './calculator/calculator';
 import ranges from './ranges';
 import { TAnte, TPosition } from './ranges/types';
@@ -25,15 +25,15 @@ const message: IMessage = {
     selecting: 'Waiting...',
 };
 
-const getColor = (state: keyof IMessage): Color => {
+const getColor = (state: keyof IMessage): TPaletteColors => {
     if (state === 'yes') {
-        return 'green';
+        return 'success';
     }
     if (state === 'selecting') {
-        return 'blue';
+        return 'pending';
     }
 
-    return 'red';
+    return 'error';
 };
 
 const Solution = ({ ante, hand, stack, position }: ISolutionProps) => {

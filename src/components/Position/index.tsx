@@ -19,14 +19,14 @@ const Position = ({ selectedPosition, setSelectedPosition }: IProps) => {
     };
 
     return (
-        <Section grid={4} title="Your position" background="orange" margin={[0, 0, 16]} gap={8}>
+        <Section grid={4} title="Your position" background="secondary" margin={[0, 0, 16]} gap={8}>
             {positions.map((position: TPosition, index: number) => (
                 <Oval
                     key={index}
                     isSelected={selectedPosition === position}
                     onClick={() => toggleSelectedStack(position)}
-                    background="red"
-                    selectedBackground="green"
+                    background="primary"
+                    selectedBackground="selected"
                 >
                     {position}
                 </Oval>
