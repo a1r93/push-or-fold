@@ -6,6 +6,7 @@ import { getThemeName, persistSelectedTheme, themes } from '../../styles/themes'
 import { Button } from '../Button';
 import Switch from '../Switch';
 import HandsGrid from './HandsGrid';
+import InlinePicker from './InlinePicker';
 import { StyledSection } from './style';
 
 interface IProps {
@@ -53,7 +54,7 @@ const HandsPicker = ({ onReset, selectedHand, setSelectedHand, setTheme }: IProp
             {view === 'grid' ? (
                 <HandsGrid selectedHand={selectedHand} toggleIsSelected={toggleIsSelected} />
             ) : (
-                <HandsGrid selectedHand={selectedHand} toggleIsSelected={toggleIsSelected} />
+                <InlinePicker selectedHand={selectedHand} setSelectedHand={setSelectedHand} />
             )}
         </StyledSection>
     );

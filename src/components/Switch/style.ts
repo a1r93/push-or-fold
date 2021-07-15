@@ -15,7 +15,7 @@ export const SwitchButton = styled.div<{ $isChecked: boolean }>`
     transition: all 0.3s ease-in;
     width: 60px;
     height: 30px;
-    background-color: ${({ $isChecked }) => ($isChecked ? '#97361c' : '#83636b')};
+    background-color: ${({ $isChecked }) => ($isChecked ? '#297067' : '#83636b')};
     border-radius: 0 125px 125px 0;
     border: 3px solid white;
     cursor: pointer;

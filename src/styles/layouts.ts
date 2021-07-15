@@ -12,17 +12,9 @@ interface IFlexBox {
     inline?: boolean;
 }
 
-interface IGrid {
-    cols?: number;
-    rows?: number;
-    gap?: number;
-}
-
-const getSpacing = (value: number[]) => value.map((current: number) => `${current * 8}px`).join(' ');
-
 export const Spaced = styled('div')<ISpaced>`
-    margin: ${({ margin = [0] }) => getSpacing(margin)};
-    padding: ${({ padding = [0] }) => getSpacing(padding)};
+    margin: ${({ margin = [0], theme }) => theme.spacing(margin)};
+    padding: ${({ padding = [0], theme }) => theme.spacing(padding)};
 `;
 
 export const Container = styled(Spaced)<IFlexBox>`
@@ -41,13 +33,4 @@ export const Column = styled(Container)`
     height: 100%;
     display: ${({ inline }) => (inline ? 'inline-flex' : 'flex')};
     flex-direction: column;
-`;
-
-export const Grid = styled(Container)<IGrid>`
-    display: ${({ inline }) => (inline ? 'inline-grid' : 'grid')};
-    grid-auto-flow: row dense;
-    grid-gap: ${({ gap = 2, theme }) => getSpacing([gap])};
-    grid-auto-columns: 1fr;
-    grid-template-columns: repeat(${({ cols = 1 }) => cols}, 1fr);
-    grid-template-rows: repeat(${({ rows = 1 }) => rows}, 1fr);
 `;
