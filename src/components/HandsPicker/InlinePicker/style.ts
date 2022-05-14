@@ -9,7 +9,7 @@ export const Container = styled(Row)`
 `;
 
 export const SpacedColumn = styled(Column)`
-    gap: 6px;
+    gap: 4px;
 `;
 
 export const SuitOval = styled(Oval)`

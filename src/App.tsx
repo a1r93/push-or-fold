@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 
 import Ante from './components/Ante';
@@ -6,6 +6,7 @@ import HandsPicker from './components/HandsPicker';
 import Position from './components/Position';
 import Solution from './components/Solution';
 import { TAnte, TPosition } from './components/Solution/ranges/types';
+import SplashScreen from './components/SplashScreen';
 import StackSize from './components/StackSize';
 import { AppContainer, Column, SolutionWrapper } from './style';
 import { GlobalStyle } from './styles/GlobalStyle';
@@ -17,6 +18,13 @@ export function App() {
     const [selectedStack, setSelectedStack] = useState<number | undefined>(undefined);
     const [selectedAnte, setSelectedAnte] = useState<TAnte>('ante10');
     const [theme, setTheme] = useState<DefaultTheme>(getPersistedSelectedTheme());
+    const [showSplash, setShowSplash] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowSplash(false);
+        }, 3000);
+    }, []);
 
     const resetAll = () => {
         setSelectedHand(undefined);
@@ -27,6 +35,7 @@ export function App() {
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyle />
+            {showSplash && <SplashScreen />}
             <AppContainer>
                 <HandsPicker
                     selectedHand={selectedHand}

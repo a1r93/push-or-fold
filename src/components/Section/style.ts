@@ -8,20 +8,21 @@ export const SectionContainer = styled.div<{ background: TPaletteColors; span?: 
     display: flex;
     flex-direction: column;
     flex: ${({ span = 0 }) => span};
-    margin: ${({ margin = [16, 0] }) => getMargin(margin)};
+    margin: ${({ margin = [12, 0] }) => getMargin(margin)};
     padding: 16px;
     border-radius: 11px;
     background: ${({ background, theme }) => theme.palette[background]};
     transition: all ${({ theme }) => theme.transitionDuration}ms ease-in-out;
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+    font-size: 1.5rem;
+`;
 
 export const SectionWrapper = styled.div<{ gap: number; grid: number }>`
     display: grid;
     grid-template-columns: repeat(${({ grid }) => grid}, 1fr);
     grid-gap: ${({ gap }) => gap}px;
-    height: 100%;
 `;
 
 export const Cell = styled.div<{ isSelected: boolean; background: TPaletteColors; selectedBackground: TPaletteColors }>`
@@ -30,23 +31,23 @@ export const Cell = styled.div<{ isSelected: boolean; background: TPaletteColors
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
     color: white;
     border-radius: ${({ theme }) => theme.radius}px;
-    font-size: ${({ isSelected }) => (isSelected ? '1.1rem' : '1rem')};
+    font-size: ${({ isSelected }) => (isSelected ? '0.96rem' : '0.9rem')};
     font-weight: ${({ isSelected }) => (isSelected ? 'bolder' : '400')};
     transition: background ${({ theme }) => theme.transitionDuration}ms ease-in-out,
         border-radius ${({ theme }) => theme.transitionDuration}ms ease-in-out;
 
     &:hover {
-        font-size: 1.1rem;
+        font-size: 0.96rem;
         font-weight: bolder;
     }
 `;
 
 export const Oval = styled(Cell)`
-    width: 65px;
+    width: 60px;
     border-radius: ${({ theme }) => theme.ovalRadius}px;
 `;

@@ -9,7 +9,7 @@ export const SolutionWrapper = styled.div<{ background: TPaletteColors }>`
     align-items: center;
     justify-content: center;
     border-radius: 11px;
-    height: 140px;
+    height: 122px;
     transition: all ${({ theme }) => theme.transitionDuration}ms ease-in-out;
 `;
 

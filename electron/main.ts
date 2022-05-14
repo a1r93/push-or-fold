@@ -13,8 +13,8 @@ declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 function createWindow() {
     mainWindow = new BrowserWindow({
         // icon: path.join(assetsPath, 'assets', 'icon.png'),
-        width: 1120,
-        height: 890,
+        width: 1009,
+        height: 775,
         backgroundColor: '#8cc0b0',
         webPreferences: {
             nodeIntegration: false,
@@ -22,7 +22,7 @@ function createWindow() {
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
         },
     });
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
     mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
     mainWindow.on('closed', () => {

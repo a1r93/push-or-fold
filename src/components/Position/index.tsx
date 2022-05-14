@@ -19,7 +19,7 @@ const Position = ({ selectedPosition, setSelectedPosition }: IProps) => {
     };
 
     return (
-        <Section grid={4} title="Your position" background="secondary" margin={[0, 0, 16]} gap={8}>
+        <Section grid={4} title="Your position" background="secondary" margin={[0, 0, 12]} gap={6}>
             {positions.map((position: TPosition, index: number) => (
                 <Oval
                     key={index}
