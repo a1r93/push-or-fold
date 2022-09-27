@@ -14,5 +14,5 @@ export const SpacedColumn = styled(Column)`
 
 export const SuitOval = styled(Oval)`
     width: 90px;
-    margin: ${({ theme }) => theme.spacing([2, 0])};
+    margin: ${({ theme }) => theme.spacing([1.5, 0])};
 `;

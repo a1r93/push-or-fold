@@ -13,6 +13,6 @@ export const SolutionWrapper = styled.div<{ background: TPaletteColors }>`
     transition: all ${({ theme }) => theme.transitionDuration}ms ease-in-out;
 `;
 
-export const SolutionText = styled.h2`
+export const SolutionText = styled.h3`
     color: white;
 `;

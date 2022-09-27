@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const AppContainer = styled.div`
     display: flex;
-    gap: 16px;
-    margin: 0 16px;
+    gap: 12px;
+    margin: 0 12px;
 `;
 
 export const Column = styled.div`
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 `;
 
 export const SolutionWrapper = styled(Column)`

@@ -28,7 +28,7 @@ const Section = ({
 }: ISectionProps) => {
     return (
         <SectionContainer background={background} span={span} margin={margin} {...styledComponentsProps}>
-            <Row justify="space-between" align="center" padding={[0, 0, 2]}>
+            <Row justify="space-between" align="center" padding={[0, 0, 1]}>
                 <Title>{title}</Title>
                 {headerSlot}
             </Row>

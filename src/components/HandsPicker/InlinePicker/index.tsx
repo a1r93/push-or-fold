@@ -66,7 +66,7 @@ const InlinePicker = ({ selectedHand, setSelectedHand }: IProps) => {
 
     return (
         <Container justify="center" margin={[0, 0, 0, 6]}>
-            <SpacedColumn span={0} margin={[0, 2, 0, 0]}>
+            <SpacedColumn span={0} margin={[0, 1, 0, 0]}>
                 {cards.map((card: string) => (
                     <Cell
                         key={card}

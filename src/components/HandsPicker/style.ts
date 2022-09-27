@@ -4,5 +4,5 @@ import Section from '../Section';
 
 export const StyledSection = styled(Section)`
     flex: 0 0 auto;
-    width: 665px;
+    width: 540px;
 `;

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.button`
-    height: 42px;
-    padding: 0 24px;
+    height: 32px;
+    padding: 0 8px;
 
     display: flex;
     align-items: center;
@@ -14,8 +14,8 @@ export const Container = styled.button`
     border: 0;
 
     color: #fff;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 0.8rem;
+    font-weight: bolder;
 
     cursor: pointer;
 
