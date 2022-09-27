@@ -12,7 +12,7 @@ const messages = {
 };
 
 interface IProps {
-    selectedAnte: TAnte;
+    selectedAnte: TAnte | undefined;
     setSelectedAnte: (value: TAnte) => void;
 }
 

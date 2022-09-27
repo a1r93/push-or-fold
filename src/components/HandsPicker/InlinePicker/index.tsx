@@ -34,6 +34,14 @@ const InlinePicker = ({ selectedHand, setSelectedHand }: IProps) => {
         setSelectedHand(nextSelectedHand);
     }, [card1, card2, suit]);
 
+    useEffect(() => {
+        if (!selectedHand) {
+            setCard1(undefined);
+            setCard2(undefined);
+            setSuit(undefined);
+        }
+    }, [selectedHand, setCard1, setCard2, setSuit]);
+
     const toggleCard1 = (value: string) => {
         if (card1 === value) {
             setCard1(undefined);
@@ -53,7 +61,7 @@ const InlinePicker = ({ selectedHand, setSelectedHand }: IProps) => {
     };
 
     const toggleSuit = (value: string) => {
-        if (card1 === card2) {
+        if (card1 === card2 && card1 && card2) {
             return;
         }
         if (suit === value) {

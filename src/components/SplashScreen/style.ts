@@ -29,7 +29,7 @@ export const SplashScreenContainer = styled.div`
 
 export const WelcomeContainer = styled.div`
     text-align: center;
-    height: 65px;
+    height: 45px;
     overflow: hidden;
 `;
 
@@ -52,7 +52,7 @@ export const Char = styled.div<{ delay: number }>`
     backface-visibility: hidden;
     color: white;
     display: inline-block;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     letter-spacing: 0.1em;
     overflow: hidden;

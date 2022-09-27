@@ -18,6 +18,8 @@ export const getPersistedSelectedTheme = (): DefaultTheme => {
     const key = getThemeName();
 
     if (!key || !themes[key]) {
+        console.log('here ?');
+        persistSelectedTheme('grid');
         return themes.grid;
     }
 

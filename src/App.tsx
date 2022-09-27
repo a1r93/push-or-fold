@@ -16,7 +16,7 @@ export function App() {
     const [selectedHand, setSelectedHand] = useState<string | undefined>(undefined);
     const [selectedPosition, setSelectedPosition] = useState<TPosition | undefined>(undefined);
     const [selectedStack, setSelectedStack] = useState<number | undefined>(undefined);
-    const [selectedAnte, setSelectedAnte] = useState<TAnte>('ante10');
+    const [selectedAnte, setSelectedAnte] = useState<TAnte | undefined>('ante10');
     const [theme, setTheme] = useState<DefaultTheme>(getPersistedSelectedTheme());
     const [showSplash, setShowSplash] = useState(true);
 
@@ -30,6 +30,7 @@ export function App() {
         setSelectedHand(undefined);
         setSelectedPosition(undefined);
         setSelectedStack(undefined);
+        setSelectedAnte(undefined);
     };
 
     return (
