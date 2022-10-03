@@ -4,6 +4,7 @@ import { DefaultTheme } from 'styled-components';
 import { Row } from '../../styles/layouts';
 import { getThemeName, persistSelectedTheme, themes } from '../../styles/themes';
 import { Button } from '../Button';
+import { TAnte, TPosition } from '../Solution/ranges/types';
 import Switch from '../Switch';
 import HandsGrid from './HandsGrid';
 import InlinePicker from './InlinePicker';
@@ -14,9 +15,12 @@ interface IProps {
     setSelectedHand: (value: string | undefined) => void;
     onReset: () => void;
     setTheme: (theme: DefaultTheme) => void;
+    ante: TAnte | undefined;
+    position: TPosition | undefined;
+    stack: number | undefined;
 }
 
-const HandsPicker = ({ onReset, selectedHand, setSelectedHand, setTheme }: IProps) => {
+const HandsPicker = ({ onReset, selectedHand, setSelectedHand, setTheme, ante, position, stack }: IProps) => {
     const [view, setView] = useState<'grid' | 'inline'>(getThemeName());
 
     const toggleIsSelected = (value: string) => {
@@ -52,7 +56,13 @@ const HandsPicker = ({ onReset, selectedHand, setSelectedHand, setTheme }: IProp
             }
         >
             {view === 'grid' ? (
-                <HandsGrid selectedHand={selectedHand} toggleIsSelected={toggleIsSelected} />
+                <HandsGrid
+                    selectedHand={selectedHand}
+                    toggleIsSelected={toggleIsSelected}
+                    ante={ante}
+                    position={position}
+                    stack={stack}
+                />
             ) : (
                 <InlinePicker selectedHand={selectedHand} setSelectedHand={setSelectedHand} />
             )}

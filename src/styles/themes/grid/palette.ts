@@ -3,6 +3,7 @@ import { IPalette } from '../types';
 const palette: IPalette = {
     background: '#8cc0b0',
     primary: '#e27d60',
+    'primary-variant': '#df7153',
     secondary: '#e8a87c',
     tertiary: '#c38d9e',
     selected: '#41b3a3',

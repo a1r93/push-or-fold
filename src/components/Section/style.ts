@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { StyledProps } from 'styled-components';
 
 import { TPaletteColors } from '../../styles/themes/types';
 
@@ -25,9 +25,27 @@ export const SectionWrapper = styled.div<{ gap: number; grid: number }>`
     grid-gap: ${({ gap }) => gap}px;
 `;
 
-export const Cell = styled.div<{ isSelected: boolean; background: TPaletteColors; selectedBackground: TPaletteColors }>`
-    background: ${({ isSelected, selectedBackground, background, theme }) =>
-        isSelected ? theme.palette[selectedBackground] : theme.palette[background]};
+interface ICellProps {
+    isSelected: boolean;
+    background: TPaletteColors;
+    selectedBackground: TPaletteColors;
+    isHighlighted?: boolean;
+}
+
+const getCellBackground = ({
+    isSelected,
+    background,
+    selectedBackground,
+    isHighlighted,
+    theme,
+}: StyledProps<ICellProps>) => {
+    if (isSelected) return theme.palette[selectedBackground];
+
+    return isHighlighted ? theme.palette.tertiary : theme.palette[background];
+};
+
+export const Cell = styled.div<ICellProps>`
+    background: ${getCellBackground};
     display: flex;
     justify-content: center;
     align-items: center;

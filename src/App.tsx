@@ -43,6 +43,9 @@ export function App() {
                     setSelectedHand={setSelectedHand}
                     onReset={resetAll}
                     setTheme={setTheme}
+                    stack={selectedStack}
+                    position={selectedPosition}
+                    ante={selectedAnte}
                 />
                 <Column>
                     <Ante selectedAnte={selectedAnte} setSelectedAnte={setSelectedAnte} />

@@ -1,6 +1,7 @@
 export interface IPalette {
     background: string;
     primary: string;
+    'primary-variant': string;
     secondary: string;
     tertiary: string;
     selected: string;
